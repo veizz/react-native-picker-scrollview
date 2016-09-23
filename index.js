@@ -15,11 +15,6 @@ const deviceHeight = Dimensions.get('window').height;
 
 export default class ScrollPicker extends Component {
 
-    momentumStarted = false;
-    dragStarted = false;
-    sview = null;
-    firstItem = null;
-
     static propTypes = {
         style:View.propTypes.style,
         dataSource:React.PropTypes.array.isRequired,
