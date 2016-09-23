@@ -2,9 +2,14 @@
 
 a pure js picker, each option item customizable
 
+
 ### usage
 
+```shell
+npm install react-native-picker-scrollview --save
 ```
+
+```jsx
 import React, {Component} from 'react';
 import ScrollPicker from 'react-native-picker-scrollview';
 
