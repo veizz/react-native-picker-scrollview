@@ -2,6 +2,8 @@
 
 a pure js picker, each option item customizable
 
+![example](./res/demo.gif)
+
 
 ### usage
 
