@@ -9,6 +9,7 @@ import ReactNative, {
     Dimensions,
     Platform,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
@@ -16,15 +17,15 @@ const deviceHeight = Dimensions.get('window').height;
 export default class ScrollPicker extends Component {
 
     static propTypes = {
-        style:View.propTypes.style,
-        dataSource:React.PropTypes.array.isRequired,
-        selectedIndex:React.PropTypes.number,
-        onValueChange:React.PropTypes.func,
-        renderItem:React.PropTypes.func,
-        highlightColor:React.PropTypes.string,
+        style:ViewPropTypes.style,
+        dataSource:PropTypes.array.isRequired,
+        selectedIndex:PropTypes.number,
+        onValueChange:PropTypes.func,
+        renderItem:PropTypes.func,
+        highlightColor:PropTypes.string,
 
-        itemHeight:React.PropTypes.number,
-        wrapperHeight:React.PropTypes.number,
+        itemHeight:PropTypes.number,
+        wrapperHeight:PropTypes.number,
     };
 
     constructor(props){
