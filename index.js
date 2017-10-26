@@ -8,6 +8,7 @@ import ReactNative, {
     ScrollView,
     Dimensions,
     Platform,
+    ViewPropTypes
 } from 'react-native';
 import PropTypes from 'prop-types';
 
