@@ -212,4 +212,3 @@ export default class ScrollPicker extends React.Component<Props, State> {
     this.sview.scrollTo({ y });
   }
 }
-export default ScrollPicker;
