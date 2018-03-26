@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import styled from 'styled-components';
 import {
@@ -7,6 +6,7 @@ import {
   Dimensions,
   Platform,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 const Container = styled.View`
   height: ${props => props.wrapperHeight};
@@ -37,42 +37,19 @@ export const ItemText = styled.Text`
   line-height: 26px;
   text-align: center;
 `;
-type Props = {
-  style?: Object,
-  dataSource: Array<number>,
-  selectedIndex?: number,
-  onValueChange?: () => void,
-  renderItem?: () => void,
-  highlightColor?: string,
-  itemHeight?: number,
-  wrapperHeight?: number,
-  highlightWidth?: string,
-  highlightBorderWidth?: number,
-};
-type State = {
-  selectedIndex: number,
-}
 const deviceWidth = Dimensions.get('window').width;
-export default class ScrollPicker extends React.Component<Props, State> {
-  static defaultProps: Props = {
-    dataSource: [1, 2, 3],
-    itemHeight: 60,
-    wrapperHeight: 180,
-    highlightWidth: deviceWidth,
-    highlightBorderWidth: 2,
-    highlightColor: '#333',
-  };
-  state = {
-    selectedIndex: 1,
-  };
-
+export default class ScrollPicker extends React.Component {
   constructor() {
     super();
     this.onMomentumScrollBegin = this.onMomentumScrollBegin.bind(this);
     this.onMomentumScrollEnd = this.onMomentumScrollEnd.bind(this);
     this.onScrollBeginDrag = this.onScrollBeginDrag.bind(this);
     this.onScrollEndDrag = this.onScrollEndDrag.bind(this);
+    this.state = {
+      selectedIndex: 1,
+    }
   }
+
   componentDidMount() {
     if (this.props.selectedIndex) {
       setTimeout(() => {
@@ -212,3 +189,23 @@ export default class ScrollPicker extends React.Component<Props, State> {
     this.sview.scrollTo({ y });
   }
 }
+ScrollPicker.propTypes = {
+  style: PropTypes.object,
+  dataSource: PropTypes.array,
+  selectedIndex: PropTypes.number,
+  onValueChange: PropTypes.func,
+  renderItem: PropTypes.func,
+  highlightColor: PropTypes.string,
+  itemHeight: PropTypes.number,
+  wrapperHeight: PropTypes.number,
+  highlightWidth: PropTypes.number,
+  highlightBorderWidth: PropTypes.number,
+};
+ScrollPicker.defaultProps = {
+  dataSource: [1, 2, 3],
+  itemHeight: 60,
+  wrapperHeight: 180,
+  highlightWidth: deviceWidth,
+  highlightBorderWidth: 2,
+  highlightColor: '#333',
+};
