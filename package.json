@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/veizz/react-native-picker-scrollview.git"
+    "url": "https://github.com/yasemincidem/react-native-picker-scrollview"
   },
   "keywords": [
     "picker",
     "react-native",
     "react-native-picker"
   ],
-  "author": "veizz",
+  "author": "yasemin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/veizz/react-native-picker-scrollview/issues"
+    "url": "https://github.com/yasemincidem/react-native-picker-scrollview/issues"
   },
-  "homepage": "https://github.com/veizz/react-native-picker-scrollview#readme"
+  "homepage": "https://github.com/yasemincidem/react-native-picker-scrollview#readme"
 }
