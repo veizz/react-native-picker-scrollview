@@ -1,5 +1,5 @@
 {
-  "name": "react-native-picker-scrollview",
+  "name": "react-native-wheelpicker",
   "version": "0.1.0",
   "description": "a pure js picker, each option item customizable",
   "main": "index.js",
