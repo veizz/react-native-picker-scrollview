@@ -1,4 +1,4 @@
-## react-native-picker-scrollview
+## react-native-wheel-scroll-picker
 
 a pure js picker, each option item customizable
 
@@ -8,12 +8,12 @@ a pure js picker, each option item customizable
 ### usage
 
 ```shell
-npm install react-native-picker-scrollview --save
+npm install react-native-wheel-scroll-picker --save
 ```
 
 ```jsx
 import React, {Component} from 'react';
-import ScrollPicker from 'react-native-picker-scrollview';
+import ScrollPicker from 'react-native-wheel-scroll-picker';
 
 export default class SimpleExample extends Component {
 
