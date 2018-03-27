@@ -129,12 +129,12 @@ export default class ScrollPicker extends React.Component {
     if (this.state.selectedIndex === selectedIndex) {
       return;
     }
+    this.setState({
+      selectedIndex,
+    });
     // onValueChange
     if (this.props.onValueChange) {
       const selectedValue = this.props.dataSource[selectedIndex];
-      this.setState({
-        selectedIndex,
-      });
       this.props.onValueChange(selectedValue, selectedIndex);
     }
   }
