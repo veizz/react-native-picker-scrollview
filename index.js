@@ -13,8 +13,8 @@ const Container = styled.View`
   flex: 1;
   overflow: hidden;
   align-self: center;
-  width: 150px;
-  background-color: white;
+  width: ${props => props.wrapperWidth};
+  background-color: ${props => props.wrapperBackground};
 `;
 export const HighLightView = styled.View`
   position: absolute;
@@ -102,7 +102,7 @@ export default class ScrollPicker extends React.Component {
 
   renderItem(data, index) {
     const isSelected = index === this.state.selectedIndex;
-    const item = <ItemText color={isSelected ? '#222121' : '#B4B4B4'}>{data}</ItemText>;
+    const item = <ItemText color={isSelected ? this.props.activeItemColor : this.props.itemColor}>{data}</ItemText>;
 
     return (
       <SelectedItem key={index} itemHeight={this.props.itemHeight}>
@@ -198,15 +198,23 @@ ScrollPicker.propTypes = {
   renderItem: PropTypes.func,
   highlightColor: PropTypes.string,
   itemHeight: PropTypes.number,
+  wrapperBackground: PropTypes.string,
+  wrapperWidth: PropTypes.number,
   wrapperHeight: PropTypes.number,
   highlightWidth: PropTypes.number,
   highlightBorderWidth: PropTypes.number,
+  activeItemColor: PropTypes.string,
+  itemColor: PropTypes.string,
 };
 ScrollPicker.defaultProps = {
   dataSource: [1, 2, 3],
   itemHeight: 60,
+  wrapperBackground: 'white',
   wrapperHeight: 180,
+  wrapperWidth: 150,
   highlightWidth: deviceWidth,
   highlightBorderWidth: 2,
   highlightColor: '#333',
+  activeItemColor: '#222121',
+  itemColor: '#B4B4B4',
 };

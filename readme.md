@@ -2,7 +2,7 @@
 
 a pure js picker, each option item customizable
 
-![example](./res/demo.gif)
+![example](./demo/test.gif)
 
 
 ### usage
@@ -19,34 +19,30 @@ export default class SimpleExample extends Component {
 
     render() {
         return(
-            <ScrollPicker
-                ref={(sp) => {this.sp = sp}}
-
-                dataSource={[
-                    'a',
-                    'b',
-                    'c',
-                    'd',
-                ]}
-                selectedIndex={0}
-                itemHeight={50}
-                wrapperHeight={250}
-                highlightColor={'#d8d8d8'}
-                renderItem={(data, index, isSelected) => {
-                    //
-                }}
-                onValueChange={(data, selectedIndex) => {
-                    //
-                }}
-            />
+             <ScrollPicker
+                  dataSource={[
+                       'a',
+                       'b',
+                       'c',
+                       'd',
+                  ]}
+                  selectedIndex={1}
+                  renderItem={(data, index, isSelected) => {
+                      //
+                  }}
+                  onValueChange={(data, selectedIndex) => {
+                      //
+                  }}
+                  wrapperHeight={180}
+                  wrapperWidth={150}
+                  wrapperBackground={'#FFFFFF'}
+                  itemHeight={60}
+                  highlightColor={'#d8d8d8'}
+                  highlightBorderWidth={2}
+                  activeItemColor={'#222121'}
+                  itemColor={'#B4B4B4'}
+                />
         )
-    }
-
-
-    //
-    someOtherFunc(){
-        this.sp.scrollToIndex(2);   // select 'c'
-        let selectedValue = this.sp.getSelected();  // returns 'c'
     }
 }
 ```
