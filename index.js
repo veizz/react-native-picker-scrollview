@@ -14,6 +14,7 @@ const Container = styled.View`
   overflow: hidden;
   align-self: center;
   width: 150px;
+  background-color: white;
 `;
 export const HighLightView = styled.View`
   position: absolute;
