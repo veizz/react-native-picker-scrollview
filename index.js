@@ -68,7 +68,7 @@ export default class ScrollPicker extends React.Component {
   render() {
     const { header, footer } = this.renderPlaceHolder();
     return (
-      <Container wrapperHeight={this.props.wrapperHeight}>
+      <Container wrapperHeight={this.props.wrapperHeight} wrapperWidth={this.props.wrapperWidth} wrapperBackground={this.props.wrapperBackground}>
         <HighLightView highlightColor={this.props.highlightColor}
                        highlightWidth={this.props.highlightWidth}
                        wrapperHeight={this.props.wrapperHeight}
@@ -209,7 +209,7 @@ ScrollPicker.propTypes = {
 ScrollPicker.defaultProps = {
   dataSource: [1, 2, 3],
   itemHeight: 60,
-  wrapperBackground: 'white',
+  wrapperBackground: '#FFFFFF',
   wrapperHeight: 180,
   wrapperWidth: 150,
   highlightWidth: deviceWidth,
