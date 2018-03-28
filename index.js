@@ -80,6 +80,7 @@ export default class ScrollPicker extends React.Component {
           }}
           bounces={false}
           showsVerticalScrollIndicator={false}
+          onTouchStart={this.props.onTouchStart}
           onMomentumScrollBegin={this.onMomentumScrollBegin}
           onMomentumScrollEnd={this.onMomentumScrollEnd}
           onScrollBeginDrag={this.onScrollBeginDrag}
@@ -148,6 +149,7 @@ export default class ScrollPicker extends React.Component {
     }
   }
   onScrollEndDrag(e) {
+    this.props.onScrollEndDrag();
     this.dragStarted = false;
     // if not used, event will be garbaged
     const element = {
@@ -176,6 +178,7 @@ export default class ScrollPicker extends React.Component {
     }
   }
   onMomentumScrollEnd(e) {
+    this.props.onMomentumScrollEnd();
     this.momentumStarted = false;
     if (!this.isScrollTo && !this.momentumStarted && !this.dragStarted) {
       this.scrollFix(e);
@@ -205,6 +208,8 @@ ScrollPicker.propTypes = {
   highlightBorderWidth: PropTypes.number,
   activeItemColor: PropTypes.string,
   itemColor: PropTypes.string,
+  onMomentumScrollEnd: PropTypes.func,
+  onScrollEndDrag: PropTypes.func,
 };
 ScrollPicker.defaultProps = {
   dataSource: [1, 2, 3],
