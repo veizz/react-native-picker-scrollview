@@ -222,4 +222,6 @@ ScrollPicker.defaultProps = {
   highlightColor: '#333',
   activeItemColor: '#222121',
   itemColor: '#B4B4B4',
+  onMomentumScrollEnd: () => {},
+  onScrollEndDrag: () => {},
 };
