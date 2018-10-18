@@ -33,7 +33,11 @@ export default class SimpleExample extends Component {
                 wrapperHeight={250}
                 highlightColor={'#d8d8d8'}
                 renderItem={(data, index, isSelected) => {
-                    //
+                    return(
+                        <View>
+                            <Text >{data}</Text>
+                        </View>
+                    )
                 }}
                 onValueChange={(data, selectedIndex) => {
                     //
