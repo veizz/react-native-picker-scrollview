@@ -119,7 +119,9 @@ export default class ScrollPicker extends React.Component {
       if (Platform.OS === 'ios') {
         this.isScrollTo = true;
       }
-      this.sview.scrollTo({y: verticalElem});
+      if (this.sview) {
+        this.sview.scrollTo({y: verticalElem});
+      }
     }
     if (this.state.selectedIndex === selectedIndex) {
       return;
@@ -189,7 +191,9 @@ export default class ScrollPicker extends React.Component {
     });
     const y = this.props.itemHeight * ind;
     setTimeout(() => {
-      this.sview.scrollTo({y});
+      if (this.sview) {
+        this.sview.scrollTo({y});
+      }
     }, 0);
   }
 }
