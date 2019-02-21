@@ -48,9 +48,7 @@ export default class ScrollPicker extends React.Component {
 
   componentDidMount() {
     if (this.props.selectedIndex) {
-      setTimeout(() => {
-        this.scrollToIndex(this.props.selectedIndex);
-      }, 0);
+      this.scrollToIndex(this.props.selectedIndex);
     }
   }
 
@@ -190,7 +188,9 @@ export default class ScrollPicker extends React.Component {
       selectedIndex: ind,
     });
     const y = this.props.itemHeight * ind;
-    this.sview.scrollTo({y});
+    setTimeout(() => {
+      this.sview.scrollTo({y});
+    }, 0);
   }
 }
 ScrollPicker.propTypes = {
