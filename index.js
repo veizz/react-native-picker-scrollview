@@ -24,7 +24,6 @@ export default class ScrollPicker extends Component {
         onValueChange:PropTypes.func,
         renderItem:PropTypes.func,
         highlightColor:PropTypes.string,
-        backgroundColor:PropTypes.string,
 
         itemHeight:PropTypes.number,
         wrapperHeight:PropTypes.number,
@@ -56,11 +55,9 @@ export default class ScrollPicker extends Component {
         let {header, footer} = this._renderPlaceHolder();
         let highlightWidth = (this.props.style ? this.props.style.width : 0) || deviceWidth;
         let highlightColor = this.props.highlightColor || '#333';
-        let backgroundColor = this.props.backgroundColor || 'transparent';
         let wrapperStyle = {
+            ...this.props.style,
             height:this.wrapperHeight,
-            flex:1,
-            backgroundColor:backgroundColor,
             overflow:'hidden',
         };
 
