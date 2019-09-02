@@ -24,7 +24,7 @@ export default class ScrollPicker extends Component {
         onValueChange:PropTypes.func,
         renderItem:PropTypes.func,
         highlightColor:PropTypes.string,
-        
+
         itemHeight:PropTypes.number,
         wrapperHeight:PropTypes.number,
         wrapperColor:PropTypes.string,
