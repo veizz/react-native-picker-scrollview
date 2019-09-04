@@ -27,6 +27,7 @@ export default class ScrollPicker extends Component {
 
         itemHeight:PropTypes.number,
         wrapperHeight:PropTypes.number,
+        wrapperColor:PropTypes.string,
     };
 
     constructor(props){
@@ -58,7 +59,7 @@ export default class ScrollPicker extends Component {
         let wrapperStyle = {
             height:this.wrapperHeight,
             flex:1,
-            backgroundColor:'#fafafa',
+            backgroundColor:this.props.wrapperColor ||'#fafafa',
             overflow:'hidden',
         };
 

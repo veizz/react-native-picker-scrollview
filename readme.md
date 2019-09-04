@@ -31,6 +31,7 @@ export default class SimpleExample extends Component {
                 selectedIndex={0}
                 itemHeight={50}
                 wrapperHeight={250}
+		wrapperColor={'#ffffff'}
                 highlightColor={'#d8d8d8'}
                 renderItem={(data, index, isSelected) => {
                     return(
