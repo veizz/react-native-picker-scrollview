@@ -13,6 +13,7 @@ npm install react-native-picker-scrollview --save
 
 ```jsx
 import React, {Component} from 'react';
+import {View, Text} from 'react-native';
 import ScrollPicker from 'react-native-picker-scrollview';
 
 export default class SimpleExample extends Component {
@@ -31,12 +32,12 @@ export default class SimpleExample extends Component {
                 selectedIndex={0}
                 itemHeight={50}
                 wrapperHeight={250}
-		wrapperColor={'#ffffff'}
+		        wrapperColor={'#ffffff'}
                 highlightColor={'#d8d8d8'}
                 renderItem={(data, index, isSelected) => {
                     return(
                         <View>
-                            <Text >{data}</Text>
+                            <Text>{data}</Text>
                         </View>
                     )
                 }}
