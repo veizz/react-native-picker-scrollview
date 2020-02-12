@@ -186,7 +186,7 @@ export default class ScrollPicker extends Component {
             selectedIndex:ind,
         });
         let y = this.itemHeight * ind;
-        this.sview.scrollTo({y:y, aniamted});
+        this.sview.scrollTo({y:y, animated});
     }
 
     getSelected(){
