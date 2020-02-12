@@ -82,6 +82,7 @@ export default class ScrollPicker extends Component {
                     ref={(sview) => { this.sview = sview; }}
                     bounces={false}
                     showsVerticalScrollIndicator={false}
+                    nestedScrollEnabled={true}
                     onMomentumScrollBegin={this._onMomentumScrollBegin.bind(this)}
                     onMomentumScrollEnd={this._onMomentumScrollEnd.bind(this)}
                     onScrollBeginDrag={this._onScrollBeginDrag.bind(this)}
