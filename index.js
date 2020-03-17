@@ -47,7 +47,7 @@ export default class ScrollPicker extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.selectedIndex) {
+    if (typeof this.props.selectedIndex !== 'undefined') {
       this.scrollToIndex(this.props.selectedIndex);
     }
   }
