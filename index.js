@@ -21,6 +21,7 @@ export default class ScrollPicker extends Component {
         style:ViewPropTypes.style,
         dataSource:PropTypes.array.isRequired,
         selectedIndex:PropTypes.number,
+        animateToSelectedIndex:PropTypes.bool,
         onValueChange:PropTypes.func,
         renderItem:PropTypes.func,
         highlightColor:PropTypes.string,
@@ -44,7 +45,7 @@ export default class ScrollPicker extends Component {
     componentDidMount(){
         if(this.props.selectedIndex){
             setTimeout(() => {
-                this.scrollToIndex(this.props.selectedIndex);
+                this.scrollToIndex(this.props.selectedIndex, this.props.animateToSelectedIndex);
             }, 0);
         }
     }
@@ -80,7 +81,8 @@ export default class ScrollPicker extends Component {
                 <ScrollView
                     ref={(sview) => { this.sview = sview; }}
                     bounces={false}
-                    showsVerticalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false} 
+                    nestedScrollEnabled={true}
                     onMomentumScrollBegin={this._onMomentumScrollBegin.bind(this)}
                     onMomentumScrollEnd={this._onMomentumScrollEnd.bind(this)}
                     onScrollBeginDrag={this._onScrollBeginDrag.bind(this)}
@@ -180,12 +182,12 @@ export default class ScrollPicker extends Component {
         }
     }
 
-    scrollToIndex(ind){
+    scrollToIndex(ind, animated = true){
         this.setState({
             selectedIndex:ind,
         });
         let y = this.itemHeight * ind;
-        this.sview.scrollTo({y:y});
+        this.sview.scrollTo({y:y, animated});
     }
 
     getSelected(){
