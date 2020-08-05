@@ -25,6 +25,7 @@ export default class ScrollPicker extends Component {
         onValueChange:PropTypes.func,
         renderItem:PropTypes.func,
         highlightColor:PropTypes.string,
+        highlightBorderWidth:PropTypes.number,
 
         itemHeight:PropTypes.number,
         wrapperHeight:PropTypes.number,
@@ -58,6 +59,7 @@ export default class ScrollPicker extends Component {
         let highlightWidth = (this.props.style ? this.props.style.width : 0) || deviceWidth;
         let highlightColor = this.props.highlightColor || '#333';
         let wrapperStyle = {
+            ...this.props.style,
             height:this.wrapperHeight,
             flex:1,
             backgroundColor:this.props.wrapperColor ||'#fafafa',
@@ -71,8 +73,8 @@ export default class ScrollPicker extends Component {
             width:highlightWidth,
             borderTopColor:highlightColor,
             borderBottomColor:highlightColor,
-            borderTopWidth:StyleSheet.hairlineWidth,
-            borderBottomWidth:StyleSheet.hairlineWidth,
+            borderTopWidth:this.props.highlightBorderWidth || StyleSheet.hairlineWidth,
+            borderBottomWidth:this.props.highlightBorderWidth || StyleSheet.hairlineWidth,
         };
 
         return (
