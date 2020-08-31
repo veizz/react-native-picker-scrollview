@@ -62,6 +62,7 @@ export default class ScrollPicker extends Component {
             flex:1,
             backgroundColor:this.props.wrapperColor ||'#fafafa',
             overflow:'hidden',
+            alignItems: 'center',
         };
 
         let highlightStyle = {
